@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+<form method="POST" action="{{ url_for('plot') }}">
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="flex: 1; padding: 10px;">
+            <label for="nejmensi" class="form-label">Nejmenší:</label>
+            <input type="number" name="nejmensi" placeholder="nejmenší" value="1" class="form-input">
+            <br>
+            <label for="nejvetsi" class="form-label">Největší:</label>
+            <input type="number" name="nejvetsi" placeholder="největší" value="10" class="form-input">
+            <br>
+            <label for="cisel" class="form-label">Počet čísel:</label>
+            <input type="number" name="cisel" placeholder="počet čísel" value="10" class="form-input">
+            <br>
+            <div style="text-align: left; padding: 10px;">
+                <input type="submit" value="Vykreslit graf" class="form-submit">
+            </div>
+        </div>
+        <div style="flex: 1; padding: 10px;">
+            <div style="margin: 10px; border: 1px solid #ccc;">
+                <img src="data:image/png;base64,{{plot_url}}">
+            </div>
+        </div>
+    </div>
+</form>
